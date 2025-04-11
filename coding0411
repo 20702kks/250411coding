@@ -1,0 +1,44 @@
+print("간-단 달력 프로그램")
+print("(수업 내용을 모두 담은 참된 프로그램)")
+print("y/n 을 입력하세요. (y=시작, n=종료)")
+
+start = input()
+
+def startcode():
+    print("숫자 제외한 문자를 입력하지 마세요.")
+    while True:
+        import calendar
+
+        print("연도를 입력하세요.(종료하려면 'x' 입력.)")
+        year = input()
+        if int(year) <= -1:
+            print("잘못된 입력입니다.")
+            print("== 처음으로 돌아갑니다. ==")
+            continue
+
+        if year == 'x':
+            break
+
+        print("월을 입력하세요.(종료하려면 'x' 입력.)")
+        month = input()
+        if int(month) <= 0:
+            print("잘못된 입력입니다.")
+            print("== 처음으로 돌아갑니다. ==")
+            continue
+
+        if month == 'x':
+            break
+
+        print(calendar.month(int(year), int(month)))
+        print("^ == 실행 완료 ==")
+
+if start == 'y':
+    startcode()
+
+elif start == 'n':
+    print("프로그램을 종료합니다...")
+
+else:
+    print("잘못된 문자 입력입니다.")
+
+print("프로그램이 종료 되었습니다.")
